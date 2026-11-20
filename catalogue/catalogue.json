@@ -4,10 +4,11 @@
       "template_id": "COMMERCE-T4",
       "titre": "Promotion",
       "version": "0.1.0",
-      "statut": "Premier essai silencieux — à juger",
+      "statut": "Montage silencieux et choix musicaux validés ; voix et mix à auditionner",
       "questions": "form/questions.json",
       "cartes": "capture-guide/ecrans.json",
-      "partition": "montage/partition.json"
+      "partition": "montage/partition.json",
+      "audio": "audio/profil.json"
     }
   ]
 }
