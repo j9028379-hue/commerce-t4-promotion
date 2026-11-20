@@ -10,9 +10,9 @@
   "plans": [
     {
       "scene": "S1",
-      "debut": 13.65,
-      "longueur": 1.83,
-      "centre": 0.5
+      "debut": 39.18,
+      "longueur": 2.55,
+      "centre": 0.535
     },
     {
       "scene": "S2",
@@ -22,8 +22,8 @@
     },
     {
       "scene": "S3",
-      "debut": 0.65,
-      "longueur": 6.25,
+      "debut": 0.44,
+      "longueur": 5.95,
       "centre": 0.5
     },
     {
