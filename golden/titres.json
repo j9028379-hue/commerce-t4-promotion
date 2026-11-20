@@ -1,0 +1,119 @@
+[
+  {
+    "debut": 0,
+    "fin": 66,
+    "type": "annonce",
+    "blanc": "EN",
+    "accent": "PROMOTION !",
+    "affiche": [
+      "EN PROMOTION !"
+    ],
+    "bounds": [
+      102,
+      890,
+      622,
+      945
+    ]
+  },
+  {
+    "debut": 66,
+    "fin": 180,
+    "type": "produit",
+    "blanc": "",
+    "accent": "{produit}",
+    "affiche": [
+      "LANTERNE LED"
+    ],
+    "bounds": [
+      128,
+      890,
+      595,
+      943
+    ]
+  },
+  {
+    "debut": 180,
+    "fin": 275,
+    "type": "detail",
+    "blanc": "EN",
+    "accent": "DÉTAIL",
+    "affiche": [
+      "EN DÉTAIL"
+    ],
+    "bounds": [
+      200,
+      890,
+      525,
+      955
+    ]
+  },
+  {
+    "debut": 275,
+    "fin": 420,
+    "type": "produit",
+    "blanc": "",
+    "accent": "{produit}",
+    "affiche": [
+      "LANTERNE LED"
+    ],
+    "bounds": [
+      128,
+      890,
+      595,
+      943
+    ]
+  },
+  {
+    "debut": 420,
+    "fin": 630,
+    "type": "prix",
+    "blanc": "{habituel}",
+    "accent": "{promo}",
+    "affiche": [
+      "10 000 F",
+      "7 000 F",
+      "JUSQU’AU 30 NOVEMBRE"
+    ],
+    "bounds": [
+      102,
+      890,
+      617,
+      1107
+    ]
+  },
+  {
+    "debut": 630,
+    "fin": 756,
+    "type": "adresse",
+    "blanc": "{commerce}",
+    "accent": "{localisation}",
+    "affiche": [
+      "BOUTIQUE GRÂCE",
+      "ABOMEY-CALAVI,",
+      "ARCONVILLE"
+    ],
+    "bounds": [
+      108,
+      890,
+      612,
+      1063
+    ]
+  },
+  {
+    "debut": 756,
+    "fin": 900,
+    "type": "contact",
+    "blanc": "WHATSAPP",
+    "accent": "{whatsapp}",
+    "affiche": [
+      "WHATSAPP",
+      "01 XX XX XX XX"
+    ],
+    "bounds": [
+      138,
+      890,
+      586,
+      1002
+    ]
+  }
+]

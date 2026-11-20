@@ -1,13 +1,17 @@
 {
   "template_id": "COMMERCE-T4",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "fps": 30,
   "images": 900,
   "dimensions": [
     720,
     1280
   ],
-  "audio": false,
+  "audio": {
+    "master_image": "silencieux",
+    "livraison": "stéréo AAC",
+    "profil": "audio/profil.json"
+  },
   "scenes": [
     {
       "id": "S1",
@@ -228,5 +232,6 @@
         "accent": "{whatsapp}"
       }
     ]
-  }
+  },
+  "audio_profile": "promo_afrobeats"
 }

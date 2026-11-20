@@ -3,12 +3,18 @@
     {
       "template_id": "COMMERCE-T4",
       "titre": "Promotion",
-      "version": "0.1.0",
-      "statut": "Montage silencieux et choix musicaux validés ; voix et mix à auditionner",
+      "version": "1.0.0",
+      "statut": "Voix et musiques validées ; mix soumis à écoute",
       "questions": "form/questions.json",
       "cartes": "capture-guide/ecrans.json",
       "partition": "montage/partition.json",
-      "audio": "audio/profil.json"
+      "audio": "audio/profil.json",
+      "audio_profile": "promo_afrobeats",
+      "schema_job": "schemas/render-job.json",
+      "validation": "approvals/validation.json",
+      "paquet": "COMMERCE-T4-1.0.0.zip",
+      "ota_implemented": false,
+      "android_verified": false
     }
   ]
 }

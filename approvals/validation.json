@@ -1,0 +1,10 @@
+{
+  "choix_visuel": true,
+  "voix_validee": true,
+  "profil_musical_valide": true,
+  "mix_final_valide_par_proprietaire": false,
+  "master_visuel_sha256": "b523f9b9c477cd4eb4fc1667872526869d8affaed1cfbb5ce435cc339af75a5b",
+  "voix_sha256": "ec272373aa347749e7931f559414f7c7c675c4b55bcf30a0fe55cf8d62bd7f42",
+  "source_actions": "44727745604",
+  "images_decodees_sha256": "a0f2f0fd6848a4285d9b2aa38c42b63e8148427e18440d9925e11bec04ce8114"
+}

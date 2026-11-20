@@ -1,9 +1,9 @@
 {
   "template_id": "COMMERCE-T4",
   "selection_musicale_validee": true,
-  "voix_complete_validee": false,
+  "voix_complete_validee": true,
   "mix_valide": false,
-  "rotation_active": false,
+  "rotation_active": true,
   "pistes": [
     {
       "numero": 1,
@@ -47,5 +47,23 @@
       "redistribution_mp3": true,
       "credit": "Collective Spirit — Joseph Sacco · https://freemusicarchive.org/music/joseph-sacco/afrobeast-instrumentals/collective-spirit/ · CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ · extrait 30 s à 53.292 s, niveau ajusté, fondu final."
     }
-  ]
+  ],
+  "id": "promo_afrobeats",
+  "version": "1.0.0",
+  "pistes_approuvees": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "rotation": "choix aléatoire équilibré parmi les pistes disponibles sauf la dernière livrée",
+  "mix": {
+    "lufs": -16,
+    "fond_db": -3,
+    "sous_parole_db": -10,
+    "attaque_ms": 120,
+    "relachement_ms": 450,
+    "ecart_min_db": 8
+  },
+  "voix_demo": "render/demo/voix/Voix-seule-T4.wav"
 }

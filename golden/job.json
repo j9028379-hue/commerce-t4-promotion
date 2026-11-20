@@ -1,0 +1,49 @@
+{
+  "template_id": "COMMERCE-T4",
+  "version": "1.0.0",
+  "reponses": {
+    "commerce": "Boutique Grâce",
+    "produit": "Lanterne LED",
+    "habituel": "10 000 F",
+    "promo": "7 000 F",
+    "fin": "Jusqu’au 30 novembre",
+    "localisation": "Abomey-Calavi, Arconville",
+    "whatsapp": "01 XX XX XX XX"
+  },
+  "ecrans": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "captures": [
+    {
+      "scene": "S1",
+      "fichier": "S1.video",
+      "sha256": "220f7d33bfe29693d66e362417fb10af631391f2f1732726dde3c96cfa0fa739"
+    },
+    {
+      "scene": "S2",
+      "fichier": "S2.video",
+      "sha256": "e69c831d3ff910dc37d5a26277b536f67e9683e4401c783a1cd6d1d9302c4106"
+    },
+    {
+      "scene": "S3",
+      "fichier": "S3.video",
+      "sha256": "c0ea45b2c1b93219f9fec01aed6b8efbfd194ac540e5640a79e8f53a5d870281"
+    },
+    {
+      "scene": "S4",
+      "fichier": "S4.video",
+      "sha256": "71ea1aab1e2a03816333871266d9d0dd6a5b4fbc86ac4f7d6082389d55ef30d4"
+    }
+  ]
+}

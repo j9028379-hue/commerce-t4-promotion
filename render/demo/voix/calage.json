@@ -1,0 +1,26 @@
+[
+  {
+    "scene": 1,
+    "debut": 0.34,
+    "fin": 4.02,
+    "atempo": 1
+  },
+  {
+    "scene": 2,
+    "debut": 6.5600000000000005,
+    "fin": 11.95,
+    "atempo": 1
+  },
+  {
+    "scene": 3,
+    "debut": 14.16,
+    "fin": 18.3,
+    "atempo": 1
+  },
+  {
+    "scene": 4,
+    "debut": 21.27,
+    "fin": 28.75,
+    "atempo": 1
+  }
+]

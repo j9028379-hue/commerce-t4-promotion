@@ -1,5 +1,5 @@
 name: Promotion · rendu silencieux depuis le job navigateur
-on: [push, workflow_dispatch]
+on: workflow_dispatch
 permissions: {contents: read}
 jobs:
   rendre:

@@ -2,3 +2,8 @@ work/
 livraison/
 node_modules/
 __pycache__/
+verification/
+paquet/
+.wrangler/
+*.sqlite*
+private/

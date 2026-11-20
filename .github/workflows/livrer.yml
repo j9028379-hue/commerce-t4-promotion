@@ -1,0 +1,69 @@
+name: Promotion · film sonore et audit de livraison
+on: workflow_dispatch
+concurrency:
+  group: commerce-t4-livraison
+  cancel-in-progress: false
+permissions: {contents: write}
+jobs:
+  rendre:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: false}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Contrat JSON et quatre rushs réels vérifiés
+        run: |
+          command -v ffmpeg && command -v ffprobe || { sudo apt-get update -qq && sudo apt-get install -y ffmpeg; }
+          pip install numpy opencv-python-headless pillow jsonschema
+          npm install --prefix "$RUNNER_TEMP/tools" --ignore-scripts --no-audit puppeteer-core@23.11.1
+          python tools/site.py && git diff --exit-code docs/data.js
+          python render/demo/preparer.py
+      - name: Parcourir les 12 écrans et exporter les prises avec le job
+        run: NODE_PATH="$RUNNER_TEMP/tools/node_modules" node render/parcours.cjs
+      - name: Lire le journal durable et vérifier le golden
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          python integration/etat.py lire
+          python audio/rotation.py import work/rotation.sqlite work/etat.json
+          python -c "import json; j=lambda p:json.load(open(p)); assert j('work/job/job.json')==j('golden/job.json')"
+      - name: Rendu sur le runner et contrôle du flux vidéo et du mix réel
+        env:
+          SOURCE_02: ${{ secrets.T4_PRIVATE_02_URL }}
+          T4_PRIVATE_02_SHA256: ${{ secrets.T4_PRIVATE_02_SHA256 }}
+        run: |
+          if [ -n "$SOURCE_02" ]; then export T4_PRIVATE_02="$RUNNER_TEMP/piste-02.mp3"; curl --proto '=https' --proto-redir '=https' -fsSL "$SOURCE_02" -o "$T4_PRIVATE_02"; fi
+          python render/marchand.py --job work/job --out verification/livres --state work/rotation.sqlite --demo --delivery "$GITHUB_RUN_ID"
+          mkdir -p livraison && cp -r verification/livres/*/* livraison/
+          python qc/audit.py
+          test "$(ffmpeg -v error -i livraison/Film.mp4 -map 0:v -pix_fmt yuv420p -f hash -hash sha256 -)" = "SHA256=$(jq -r .images_decodees_sha256 approvals/validation.json)"
+          python -c "import json; j=lambda p:json.load(open(p)); assert j('livraison/preuve.json')['fenetres']==j('golden/titres.json')"
+          python audio/rotation.py export work/rotation.sqlite work/suivant.json
+      - name: Autre marchand, contrat et paquet vérifié, Cloudflare à blanc
+        run: |
+          python qc/contre_epreuve.py preparer
+          NODE_PATH="$RUNNER_TEMP/tools/node_modules" T4_REPONSES=qc/marchand-test.json node render/parcours.cjs
+          python qc/contre_epreuve.py verifier
+          python package/livrer.py build paquet/COMMERCE-T4-1.0.0.zip
+          python qc/architecture.py paquet/COMMERCE-T4-1.0.0.zip
+          node shared/cloudflare-control-plane/test.mjs
+          (cd shared/cloudflare-control-plane && npx --yes wrangler@4.45.0 deploy --dry-run --outdir "$RUNNER_TEMP/worker")
+      - uses: actions/upload-artifact@v4
+        with:
+          name: T4-sonore
+          path: |
+            livraison/Film.mp4
+            livraison/audio.json
+            livraison/preuve.json
+            livraison/RenderResult.json
+            livraison/CREDITS.txt
+            livraison/Planche.jpg
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with: {name: T4-paquet, path: paquet/*.zip, if-no-files-found: error}
+      - name: Confirmer la rotation après succès des contrôles et des dépôts
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: python integration/etat.py confirmer
