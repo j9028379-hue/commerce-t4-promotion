@@ -38,7 +38,7 @@ jobs:
         run: |
           python integration/etat.py lire
           python audio/rotation.py import work/rotation.sqlite work/etat.json
-          python -c "import json; j=lambda p:json.load(open(p)); assert j('work/job/job.json')==j('golden/job.json')"
+          python qc/job_reference.py
       - name: Rendu sur le runner et contrôle du flux vidéo et du mix réel
         env:
           SOURCE_02: ${{ github.ref == 'refs/heads/main' && secrets.T4_PRIVATE_02_URL || '' }}
@@ -48,7 +48,8 @@ jobs:
           python render/marchand.py --job work/job --out verification/livres --state work/rotation.sqlite --demo --delivery "$GITHUB_RUN_ID"
           mkdir -p livraison && cp -r verification/livres/*/* livraison/
           python qc/audit.py
-          test "$(ffmpeg -v error -i livraison/Film.mp4 -map 0:v -pix_fmt yuv420p -f hash -hash sha256 -)" = "SHA256=$(jq -r .images_decodees_sha256 approvals/validation.json)"
+          curl -fLsS --retry 3 --proto '=https' 'https://github.com/j9028379-hue/commerce-t4-promotion/releases/download/commerce-t4-v1.0.0/T4-Promotion-Boutique-Grace.mp4' -o work/reference.mp4
+          python qc/images_reference.py work/reference.mp4 livraison/Film.mp4 livraison/Promotion-01.mp4
           python -c "import json; j=lambda p:json.load(open(p)); assert j('livraison/preuve.json')['fenetres']==j('golden/titres.json')"
           python audio/rotation.py export work/rotation.sqlite work/suivant.json
       - name: Autre marchand, contrat et paquet vérifié, Cloudflare à blanc
