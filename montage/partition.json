@@ -1,0 +1,232 @@
+{
+  "template_id": "COMMERCE-T4",
+  "version": "0.1.0",
+  "fps": 30,
+  "images": 900,
+  "dimensions": [
+    720,
+    1280
+  ],
+  "audio": false,
+  "scenes": [
+    {
+      "id": "S1",
+      "debut": 0,
+      "fin": 180,
+      "titre": "ANNONCE LA PROMOTION"
+    },
+    {
+      "id": "S2",
+      "debut": 180,
+      "fin": 420,
+      "titre": "MONTRE LE PRODUIT"
+    },
+    {
+      "id": "S3",
+      "debut": 420,
+      "fin": 630,
+      "titre": "MONTRE LE PRIX PROMO"
+    },
+    {
+      "id": "S4",
+      "debut": 630,
+      "fin": 900,
+      "titre": "INVITE LE CLIENT À ACHETER"
+    }
+  ],
+  "effets": {
+    "type": "coupe_franche",
+    "entier": 1.0,
+    "detail": 1.53,
+    "double": [
+      [
+        1.72,
+        0.5,
+        0.39
+      ],
+      [
+        1.05,
+        0.5,
+        0.52
+      ]
+    ],
+    "coupes": [
+      {
+        "image": 0,
+        "cadre": "detail"
+      },
+      {
+        "image": 21,
+        "cadre": "entier"
+      },
+      {
+        "image": 49,
+        "cadre": "detail"
+      },
+      {
+        "image": 74,
+        "cadre": "entier"
+      },
+      {
+        "image": 96,
+        "cadre": "detail"
+      },
+      {
+        "image": 122,
+        "cadre": "entier"
+      },
+      {
+        "image": 148,
+        "cadre": "double"
+      },
+      {
+        "image": 167,
+        "cadre": "entier"
+      },
+      {
+        "image": 180,
+        "cadre": "entier"
+      },
+      {
+        "image": 190,
+        "cadre": "detail"
+      },
+      {
+        "image": 212,
+        "cadre": "entier"
+      },
+      {
+        "image": 238,
+        "cadre": "double"
+      },
+      {
+        "image": 274,
+        "cadre": "entier"
+      },
+      {
+        "image": 305,
+        "cadre": "detail"
+      },
+      {
+        "image": 335,
+        "cadre": "entier"
+      },
+      {
+        "image": 364,
+        "cadre": "detail"
+      },
+      {
+        "image": 390,
+        "cadre": "double"
+      },
+      {
+        "image": 420,
+        "cadre": "entier"
+      },
+      {
+        "image": 449,
+        "cadre": "detail"
+      },
+      {
+        "image": 476,
+        "cadre": "entier"
+      },
+      {
+        "image": 532,
+        "cadre": "double"
+      },
+      {
+        "image": 558,
+        "cadre": "entier"
+      },
+      {
+        "image": 630,
+        "cadre": "double"
+      },
+      {
+        "image": 662,
+        "cadre": "entier"
+      },
+      {
+        "image": 718,
+        "cadre": "detail"
+      },
+      {
+        "image": 746,
+        "cadre": "entier"
+      }
+    ]
+  },
+  "texte": {
+    "fonte": "docs/assets/Montserrat.ttf",
+    "famille": "Montserrat Black",
+    "graisse": 900,
+    "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+    "casse": "majuscules",
+    "blanc": "#FFFFFF",
+    "accent": "#6C87FF",
+    "contour": "#090A11",
+    "trait_px": 5,
+    "ombre_px": 3,
+    "largeur": 636,
+    "y": 895,
+    "taille": 56,
+    "prix_avant_px": 55,
+    "prix_apres_px": 89,
+    "prix_barre_px": 5,
+    "condition_px": 37,
+    "condition": "{fin}",
+    "condition_si_non_vide": true,
+    "fenetres": [
+      {
+        "debut": 0,
+        "fin": 66,
+        "type": "annonce",
+        "blanc": "EN",
+        "accent": "PROMOTION !"
+      },
+      {
+        "debut": 66,
+        "fin": 180,
+        "type": "produit",
+        "blanc": "",
+        "accent": "{produit}"
+      },
+      {
+        "debut": 180,
+        "fin": 275,
+        "type": "detail",
+        "blanc": "EN",
+        "accent": "DÉTAIL"
+      },
+      {
+        "debut": 275,
+        "fin": 420,
+        "type": "produit",
+        "blanc": "",
+        "accent": "{produit}"
+      },
+      {
+        "debut": 420,
+        "fin": 630,
+        "type": "prix",
+        "blanc": "{habituel}",
+        "accent": "{promo}"
+      },
+      {
+        "debut": 630,
+        "fin": 756,
+        "type": "adresse",
+        "blanc": "{commerce}",
+        "accent": "{localisation}"
+      },
+      {
+        "debut": 756,
+        "fin": 900,
+        "type": "contact",
+        "blanc": "WHATSAPP",
+        "accent": "{whatsapp}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "decision": "C seule pour le montage ; A uniquement pour l’apparence des titres. Ni film ni audio publicitaire inclus.",
+  "C": {
+    "url": "https://adsturbo.ai/explore/350",
+    "video": "https://int-picturebook.cdn.ipalfish.com/jp/buss/base/pub/inspiration_350_1782713491.mp4",
+    "sha256": "1b55658339ad290d07183e634aeffa6fa97d35d09180fc1a8b949edc2ef7aa8b",
+    "images": 274,
+    "fps": 29.973,
+    "coupes": [
+      21,
+      49,
+      74,
+      96,
+      122,
+      148,
+      167,
+      190,
+      212,
+      238
+    ],
+    "observation": "Détail / silhouette / portrait / silhouette / détail / large ; fenêtres doubles superposées à 148 et 238. Coupes franches, sujet au centre. Pas de fondu."
+  },
+  "A": {
+    "url": "https://adsturbo.ai/explore/426",
+    "capture_sha256": "6fe327f6aee70885a94f529f3d7a8c51e9f00f7ebd43610b9800f89eeaf00b50",
+    "texte": "MY FACE PERFECTLY",
+    "note": "Identité exacte non attestée par la capture ; substitution libre choisie par silhouette, graisse et proportion."
+  }
+}

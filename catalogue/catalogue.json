@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "template_id": "COMMERCE-T4",
+      "titre": "Promotion",
+      "version": "0.1.0",
+      "statut": "Premier essai silencieux — à juger",
+      "questions": "form/questions.json",
+      "cartes": "capture-guide/ecrans.json",
+      "partition": "montage/partition.json"
+    }
+  ]
+}

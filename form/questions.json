@@ -1,0 +1,80 @@
+[
+  {
+    "numero": 1,
+    "question": "Comment s’appelle ton commerce ?",
+    "champs": [
+      {
+        "cle": "commerce",
+        "libelle": "Nom du commerce",
+        "exemple": "Boutique Grâce",
+        "obligatoire": true
+      }
+    ]
+  },
+  {
+    "numero": 2,
+    "question": "Quel produit veux-tu mettre en promotion ?",
+    "champs": [
+      {
+        "cle": "produit",
+        "libelle": "Produit",
+        "exemple": "Sac à main, chaussures, robe, téléphone",
+        "obligatoire": true
+      }
+    ]
+  },
+  {
+    "numero": 3,
+    "question": "Quel est son prix habituel et quel est son prix en promotion ?",
+    "champs": [
+      {
+        "cle": "habituel",
+        "libelle": "Prix habituel",
+        "exemple": "10 000 F",
+        "obligatoire": true
+      },
+      {
+        "cle": "promo",
+        "libelle": "Prix en promotion",
+        "exemple": "7 000 F",
+        "obligatoire": true
+      }
+    ]
+  },
+  {
+    "numero": 4,
+    "question": "La promotion se termine quand ?",
+    "champs": [
+      {
+        "cle": "fin",
+        "libelle": "Date ou condition (facultatif)",
+        "exemple": "Le 30 novembre, dimanche prochain ou jusqu’à épuisement du stock",
+        "obligatoire": false
+      }
+    ]
+  },
+  {
+    "numero": 5,
+    "question": "Où peut-on trouver ta boutique ?",
+    "champs": [
+      {
+        "cle": "localisation",
+        "libelle": "Adresse ou quartier",
+        "exemple": "Abomey-Calavi, Arconville",
+        "obligatoire": true
+      }
+    ]
+  },
+  {
+    "numero": 6,
+    "question": "Quel est ton numéro WhatsApp ?",
+    "champs": [
+      {
+        "cle": "whatsapp",
+        "libelle": "Numéro WhatsApp",
+        "exemple": "01 XX XX XX XX",
+        "obligatoire": true
+      }
+    ]
+  }
+]

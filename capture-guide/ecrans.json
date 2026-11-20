@@ -1,0 +1,178 @@
+[
+  {
+    "scene": "S1",
+    "duree_s": 6,
+    "numero": 1,
+    "etat": "guide",
+    "titre": "C’EST EN PROMOTION !",
+    "blocs": {
+      "CE QUE TU VAS FILMER": "Le produit que tu veux vendre en promotion.",
+      "À FILMER": [
+        "Pose ton produit devant le téléphone.",
+        "Fais en sorte qu’on voie bien tout le produit.",
+        "Laisse-le au milieu de l’écran."
+      ],
+      "À ÉVITER": [
+        "Ne montre pas plusieurs produits.",
+        "Ne cache pas ton produit avec tes mains.",
+        "Ne filme pas de trop loin."
+      ],
+      "CE QUE TU DOIS FAIRE": "Place ton téléphone à la verticale. Prépare ton produit et garde-le bien visible pendant toute la vidéo."
+    },
+    "parole": "Tu peux parler pendant que tu filmes, en fon, yoruba, français, anglais ou dans une autre langue que tu connais. Ce n’est pas obligatoire.",
+    "exemple": "Ce produit est en promotion !",
+    "bouton": "COMMENCER À FILMER"
+  },
+  {
+    "scene": "S1",
+    "duree_s": 6,
+    "numero": 2,
+    "etat": "enregistrement",
+    "titre": "SCÈNE 1 SUR 4",
+    "indication": "FILME TON PRODUIT",
+    "compte_a_rebours_s": 3,
+    "rec": "REC"
+  },
+  {
+    "scene": "S1",
+    "duree_s": 6,
+    "numero": 3,
+    "etat": "verification",
+    "titre": "TA VIDÉO EST PRÊTE ?",
+    "consigne": "Relis ta vidéo pour vérifier qu’on voit bien le produit.",
+    "refaire": "REFAIRE",
+    "bouton": "VALIDER ET PASSER À LA SCÈNE 2"
+  },
+  {
+    "scene": "S2",
+    "duree_s": 8,
+    "numero": 4,
+    "etat": "guide",
+    "titre": "REGARDE BIEN CE PRODUIT !",
+    "blocs": {
+      "CE QUE TU VAS FILMER": "Le même produit, mais cette fois, montre ses détails.",
+      "À FILMER": [
+        "Montre le devant du produit.",
+        "Fais doucement tourner le produit pour montrer un autre côté.",
+        "Approche un peu le produit pour montrer les détails importants."
+      ],
+      "À ÉVITER": [
+        "Ne change pas de produit.",
+        "Ne bouge pas trop vite.",
+        "Ne mets pas tes doigts devant les détails."
+      ],
+      "CE QUE TU DOIS FAIRE": "Garde le téléphone stable. Fais seulement un petit mouvement avec le produit pour que le client puisse bien le voir."
+    },
+    "parole": "Tu peux parler pendant que tu filmes, en fon, yoruba, français, anglais ou dans une autre langue que tu connais. Ce n’est pas obligatoire.",
+    "exemple": "Regardez bien la qualité de ce produit !",
+    "bouton": "COMMENCER À FILMER"
+  },
+  {
+    "scene": "S2",
+    "duree_s": 8,
+    "numero": 5,
+    "etat": "enregistrement",
+    "titre": "SCÈNE 2 SUR 4",
+    "indication": "MONTRE LES DÉTAILS DU PRODUIT",
+    "compte_a_rebours_s": 3,
+    "rec": "REC"
+  },
+  {
+    "scene": "S2",
+    "duree_s": 8,
+    "numero": 6,
+    "etat": "verification",
+    "titre": "ON VOIT BIEN LES DÉTAILS ?",
+    "consigne": "Regarde ta vidéo. Vérifie que le produit est bien visible et que ses détails sont faciles à voir.",
+    "refaire": "REFAIRE",
+    "bouton": "VALIDER ET PASSER À LA SCÈNE 3"
+  },
+  {
+    "scene": "S3",
+    "duree_s": 7,
+    "numero": 7,
+    "etat": "guide",
+    "titre": "REGARDE LE NOUVEAU PRIX !",
+    "blocs": {
+      "CE QUE TU VAS FILMER": "Ton produit bien présenté, pour attirer l’attention sur son prix en promotion.",
+      "À FILMER": [
+        "Pose le même produit devant le téléphone.",
+        "Place-le bien au milieu de l’écran.",
+        "Laisse le produit tranquille pendant quelques secondes."
+      ],
+      "À ÉVITER": [
+        "Ne filme pas un autre produit.",
+        "Ne cache pas le produit.",
+        "Ne déplace pas le téléphone pendant la vidéo."
+      ],
+      "CE QUE TU DOIS FAIRE": "Présente bien ton produit et laisse un espace autour de lui. L’application affichera le prix habituel et le prix en promotion sur la vidéo."
+    },
+    "parole": "Tu peux parler pendant que tu filmes, en fon, yoruba, français, anglais ou dans une autre langue que tu connais. Ce n’est pas obligatoire.",
+    "exemple": "Profitez de ce prix spécial !",
+    "bouton": "COMMENCER À FILMER"
+  },
+  {
+    "scene": "S3",
+    "duree_s": 7,
+    "numero": 8,
+    "etat": "enregistrement",
+    "titre": "SCÈNE 3 SUR 4",
+    "indication": "PRÉSENTE LE PRODUIT",
+    "compte_a_rebours_s": 3,
+    "rec": "REC"
+  },
+  {
+    "scene": "S3",
+    "duree_s": 7,
+    "numero": 9,
+    "etat": "verification",
+    "titre": "TON PRODUIT EST BIEN VISIBLE ?",
+    "consigne": "Regarde ta vidéo. Vérifie que le produit est bien au milieu et qu’on le voit clairement.",
+    "refaire": "REFAIRE",
+    "bouton": "VALIDER ET PASSER À LA SCÈNE 4"
+  },
+  {
+    "scene": "S4",
+    "duree_s": 9,
+    "numero": 10,
+    "etat": "guide",
+    "titre": "FAIS PROFITER LES CLIENTS !",
+    "blocs": {
+      "CE QUE TU VAS FILMER": "Ton produit une dernière fois, bien présenté devant le téléphone.",
+      "À FILMER": [
+        "Pose le même produit devant le téléphone.",
+        "Place-le bien au milieu.",
+        "Laisse-le bien visible jusqu’à la fin de la vidéo."
+      ],
+      "À ÉVITER": [
+        "Ne montre pas un autre produit.",
+        "Ne cache pas le produit.",
+        "Ne retire pas le produit trop vite."
+      ],
+      "CE QUE TU DOIS FAIRE": "Garde le produit bien visible. Laisse le téléphone stable jusqu’à la fin. L’application ajoutera les informations de ta boutique et ton numéro WhatsApp."
+    },
+    "parole": "Tu peux parler pendant que tu filmes, en fon, yoruba, français, anglais ou dans une autre langue que tu connais. Ce n’est pas obligatoire.",
+    "exemple": "Venez profiter de la promotion ! Contactez-nous !",
+    "bouton": "COMMENCER À FILMER"
+  },
+  {
+    "scene": "S4",
+    "duree_s": 9,
+    "numero": 11,
+    "etat": "enregistrement",
+    "titre": "SCÈNE 4 SUR 4",
+    "indication": "TERMINE AVEC TON PRODUIT",
+    "compte_a_rebours_s": 3,
+    "rec": "REC"
+  },
+  {
+    "scene": "S4",
+    "duree_s": 9,
+    "numero": 12,
+    "etat": "verification",
+    "titre": "TA DERNIÈRE VIDÉO EST PRÊTE !",
+    "consigne": "Vérifie que ton produit est bien visible. Tu pourras ensuite voir ta publicité complète avec les prix et les informations de ta boutique.",
+    "refaire": "REFAIRE",
+    "bouton": "VOIR MON MONTAGE"
+  }
+]
