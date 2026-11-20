@@ -4,7 +4,7 @@
       "template_id": "COMMERCE-T4",
       "titre": "Promotion",
       "version": "1.0.0",
-      "statut": "Voix et musiques validées ; mix soumis à écoute",
+      "statut": "Voix, sélection musicale et mix final livré validés par le propriétaire",
       "questions": "form/questions.json",
       "cartes": "capture-guide/ecrans.json",
       "partition": "montage/partition.json",

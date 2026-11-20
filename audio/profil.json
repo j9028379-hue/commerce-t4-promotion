@@ -2,7 +2,7 @@
   "template_id": "COMMERCE-T4",
   "selection_musicale_validee": true,
   "voix_complete_validee": true,
-  "mix_valide": false,
+  "mix_valide": true,
   "rotation_active": true,
   "pistes": [
     {

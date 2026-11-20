@@ -1,6 +1,11 @@
 name: Promotion · film sonore et audit de livraison
 on:
   workflow_dispatch:
+    inputs:
+      livrer:
+        type: boolean
+        description: Confirmer une nouvelle livraison et avancer la rotation
+        default: false
   push:
     branches: [audit/parite-t1-t2]
 concurrency:
@@ -83,7 +88,7 @@ jobs:
             work/RenderResult.json
           if-no-files-found: error
   confirmer:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    if: inputs.livrer && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     needs: rendre
     runs-on: ubuntu-24.04
     timeout-minutes: 3
