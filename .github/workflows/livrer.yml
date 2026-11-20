@@ -1,11 +1,15 @@
 name: Promotion · film sonore et audit de livraison
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: [audit/parite-t1-t2]
 concurrency:
-  group: commerce-t4-livraison
+  group: commerce-t4-${{ github.ref }}
   cancel-in-progress: false
-permissions: {contents: write}
+permissions: {contents: read}
 jobs:
   rendre:
+    permissions: {contents: read}
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -32,8 +36,8 @@ jobs:
           python -c "import json; j=lambda p:json.load(open(p)); assert j('work/job/job.json')==j('golden/job.json')"
       - name: Rendu sur le runner et contrôle du flux vidéo et du mix réel
         env:
-          SOURCE_02: ${{ secrets.T4_PRIVATE_02_URL }}
-          T4_PRIVATE_02_SHA256: ${{ secrets.T4_PRIVATE_02_SHA256 }}
+          SOURCE_02: ${{ github.ref == 'refs/heads/main' && secrets.T4_PRIVATE_02_URL || '' }}
+          T4_PRIVATE_02_SHA256: ${{ github.ref == 'refs/heads/main' && secrets.T4_PRIVATE_02_SHA256 || '' }}
         run: |
           if [ -n "$SOURCE_02" ]; then export T4_PRIVATE_02="$RUNNER_TEMP/piste-02.mp3"; curl --proto '=https' --proto-redir '=https' -fsSL "$SOURCE_02" -o "$T4_PRIVATE_02"; fi
           python render/marchand.py --job work/job --out verification/livres --state work/rotation.sqlite --demo --delivery "$GITHUB_RUN_ID"
@@ -64,6 +68,31 @@ jobs:
           if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with: {name: T4-paquet, path: paquet/*.zip, if-no-files-found: error}
-      - name: Confirmer la rotation après succès des contrôles et des dépôts
+      - name: Contrôles de parité et simulation de confirmation sans écriture
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          cp livraison/RenderResult.json work/RenderResult.json
+          python qc/parite_securite.py
+          python integration/etat.py verifier
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recu-rotation
+          path: |
+            work/etag
+            work/suivant.json
+            work/RenderResult.json
+          if-no-files-found: error
+  confirmer:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: rendre
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: false, sparse-checkout: integration, ref: "${{ github.sha }}"}
+      - uses: actions/download-artifact@v4
+        with: {name: recu-rotation, path: work}
+      - name: Confirmer après contrôles et dépôt des artefacts
         env: {GH_TOKEN: "${{ github.token }}"}
         run: python integration/etat.py confirmer
